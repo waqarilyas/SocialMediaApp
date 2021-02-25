@@ -7,6 +7,8 @@ import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SearchScreen from "../screens/SearchScreen";
 import HomeStack from "./HomeStack";
+import ChatStack from "./ChatStack";
+import CommunityStack from "./CommunityStack";
 
 import {
   searchIcon,
@@ -80,14 +82,14 @@ function BottomTabs() {
       />
       <Tab.Screen
         name="Chat"
-        component={ChatScreen}
+        component={ChatStack}
         options={{
           tabBarLabel: "",
         }}
       />
       <Tab.Screen
         name="Community"
-        component={CommunityScreen}
+        component={CommunityStack}
         options={{
           tabBarLabel: "",
         }}
