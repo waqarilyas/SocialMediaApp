@@ -13,6 +13,7 @@ import {
 } from "../../assets/images";
 import StoryAvatar from "../components/StoryAvatar";
 import ChatCard from "../components/ChatCard";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const StatusData = [
   {
@@ -65,7 +66,7 @@ const ChatData = [
 ];
 
 // create a component
-const ChatScreen = () => {
+const ChatScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <SearchComponent />
@@ -85,7 +86,15 @@ const ChatScreen = () => {
         data={ChatData}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => {
-          return <ChatCard item={item} />;
+          return (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("ChatDetailScreen");
+              }}
+            >
+              <ChatCard item={item} />
+            </TouchableOpacity>
+          );
         }}
       />
     </View>
