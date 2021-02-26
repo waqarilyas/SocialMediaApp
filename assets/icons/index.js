@@ -7,3 +7,4 @@ export const likeIcon = require("./like.png");
 export const commentIcon = require("./comment.png");
 export const checklist = require("./list.png");
 export const camera = require("./camera.png");
+export const bell = require("./bell.png");

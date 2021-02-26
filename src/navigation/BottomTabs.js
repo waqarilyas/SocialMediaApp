@@ -9,6 +9,7 @@ import SearchScreen from "../screens/SearchScreen";
 import HomeStack from "./HomeStack";
 import ChatStack from "./ChatStack";
 import CommunityStack from "./CommunityStack";
+import ProfileStack from "./ProfileStack";
 
 import {
   searchIcon,
@@ -96,7 +97,7 @@ function BottomTabs() {
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileScreen}
+        component={ProfileStack}
         options={{
           tabBarLabel: "",
         }}
