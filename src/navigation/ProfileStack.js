@@ -1,18 +1,30 @@
 import React from "react";
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, TouchableOpacity } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import ProfileScreen from "../screens/ProfileScreen";
-import { camera, checklist, bell } from "../../assets/icons";
+import NotificationScreen from "../screens/NotificationScreen";
+import SettingScreen from "../screens/SettingScreen";
+import { camera, checklist, bell, settingsIcon } from "../../assets/icons";
 
 const Stack = createStackNavigator();
 
 function ProfileStack() {
-  const headerLeft = () => {
-    return <Image source={camera} style={styles.leftImage} />;
+  const headerLeft = (navigation) => {
+    return (
+      <TouchableOpacity onPress={() => navigation.navigate("SettingScreen")}>
+        <Image source={settingsIcon} style={styles.leftImage} />
+      </TouchableOpacity>
+    );
   };
 
-  const headerRight = () => {
-    return <Image source={bell} style={styles.leftImage} />;
+  const headerRight = (navigation) => {
+    return (
+      <TouchableOpacity
+        onPress={() => navigation.navigate("NotificationScreen")}
+      >
+        <Image source={bell} style={styles.leftImage} />
+      </TouchableOpacity>
+    );
   };
 
   return (
@@ -20,10 +32,30 @@ function ProfileStack() {
       <Stack.Screen
         name="ProfileScreen"
         component={ProfileScreen}
-        options={{
+        options={({ navigation }) => ({
           title: "Profile",
-          //   headerLeft: () => headerLeft(),
-          headerRight: () => headerRight(),
+          // headerLeft: () => headerLeft(navigation),
+          headerRight: () => headerRight(navigation),
+          headerStyle: styles.header,
+        })}
+      />
+      <Stack.Screen
+        name="NotificationScreen"
+        component={NotificationScreen}
+        options={{
+          title: "Notifications",
+          // headerLeft: () => headerLeft(),
+
+          headerStyle: styles.header,
+        }}
+      />
+      <Stack.Screen
+        name="SettingScreen"
+        component={SettingScreen}
+        options={{
+          title: "Setting",
+          // headerLeft: () => headerLeft(),
+
           headerStyle: styles.header,
         }}
       />

@@ -11,7 +11,7 @@ import {
 import { userImage2 } from "../../assets/images";
 import FriendCard from "../components/FriendCard";
 
-const ProfileScreen = () => {
+const ProfileScreen = ({ navigation }) => {
   const data = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
   return (
     <ScrollView
@@ -20,7 +20,13 @@ const ProfileScreen = () => {
     >
       <Image source={userImage2} style={styles.avatar} />
       <Text style={styles.name}>John Colton</Text>
-      <Text style={styles.settingButton}>Profile Setting</Text>
+
+      <Text
+        style={styles.settingButton}
+        onPress={() => navigation.navigate("SettingScreen")}
+      >
+        Profile Setting
+      </Text>
 
       <FlatList
         data={data}

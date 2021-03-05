@@ -6,6 +6,7 @@ import CommunityScreen from "../screens/CommunityScreen";
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SearchScreen from "../screens/SearchScreen";
+import SearchStack from "./SearchStack";
 import HomeStack from "./HomeStack";
 import ChatStack from "./ChatStack";
 import CommunityStack from "./CommunityStack";
@@ -59,8 +60,8 @@ function BottomTabs() {
               style={{
                 tintColor: color,
                 resizeMode: "contain",
-                height: 30,
-                width: 30,
+                height: 25,
+                width: 25,
               }}
             />
           );
@@ -76,7 +77,7 @@ function BottomTabs() {
       />
       <Tab.Screen
         name="Search"
-        component={SearchScreen}
+        component={SearchStack}
         options={{
           tabBarLabel: "",
         }}
