@@ -11,15 +11,23 @@ import {
 import { userImage2 } from "../../assets/images";
 import FriendCard from "../components/FriendCard";
 
+import firebase from "firebase";
+import { COLORS } from "../theme/constants";
+
 const ProfileScreen = ({ navigation }) => {
   const data = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+
+  const user = firebase.auth().currentUser;
+
+  console.log(user);
+
   return (
     <ScrollView
       contentContainerStyle={styles.container}
       showsVerticalScrollIndicator={false}
     >
       <Image source={userImage2} style={styles.avatar} />
-      <Text style={styles.name}>John Colton</Text>
+      <Text style={styles.name}>{user.email}</Text>
 
       <Text
         style={styles.settingButton}
@@ -64,11 +72,11 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   settingButton: {
-    backgroundColor: "#4B8CF5",
+    backgroundColor: COLORS.primaryBlue,
     width: "90%",
     paddingVertical: 12,
     textAlign: "center",
-    color: "white",
+    color: COLORS.white,
     fontWeight: "600",
     fontSize: 16,
   },

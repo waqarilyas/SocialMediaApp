@@ -14,6 +14,7 @@ import {
 import StoryAvatar from "../components/StoryAvatar";
 import ChatCard from "../components/ChatCard";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { COLORS } from "../theme/constants";
 
 const StatusData = [
   {
@@ -105,10 +106,10 @@ const ChatScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
   },
   statusContainer: {
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
   },
 });
 

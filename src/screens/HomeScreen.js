@@ -12,6 +12,7 @@ import {
   userImage2,
 } from "../../assets/images";
 import StoryAvatar from "../components/StoryAvatar";
+import { COLORS } from "../theme/constants";
 
 const data = [
   {
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   statusContainer: {
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
   },
 });
 

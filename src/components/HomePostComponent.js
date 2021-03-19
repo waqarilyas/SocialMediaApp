@@ -9,6 +9,7 @@ import {
   Pressable,
 } from "react-native";
 import { likeIcon, commentIcon } from "../../assets/icons";
+import { COLORS } from "../theme/constants";
 
 const HomePostComponent = ({ item, navigation }) => {
   const [iconsOpened, setIconsOpened] = useState(false);
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
   container: {
     margin: 10,
     padding: 10,
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
   },
   headerImage: {
     resizeMode: "cover",
@@ -97,12 +98,12 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   date: {
-    color: "grey",
+    color: COLORS.grey,
     fontSize: 12,
     marginRight: 30,
   },
   location: {
-    color: "grey",
+    color: COLORS.grey,
     fontSize: 12,
   },
   postImage: {
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
   },
   reactionContainer: {
     flexDirection: "row",
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
     alignSelf: "center",
     borderRadius: 20,
     paddingHorizontal: 10,

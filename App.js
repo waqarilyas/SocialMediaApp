@@ -17,8 +17,6 @@ export default function App() {
     setUser(usr);
   });
 
-  console.log(user);
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>

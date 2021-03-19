@@ -1,6 +1,12 @@
 //import liraries
+
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from "react-native-responsive-screen";
+import { COLORS } from "../theme/constants";
 
 // create a component
 const StoryAvatar = ({ item }) => {
@@ -23,15 +29,15 @@ const styles = StyleSheet.create({
 
   avatar: {
     resizeMode: "cover",
-    height: 70,
-    width: 70,
-    borderRadius: 40,
-    borderWidth: 3,
-    borderColor: "rgba(0,0,255,0.5)",
+    height: hp(10),
+    width: hp(10),
+    borderRadius: hp(5),
+    borderWidth: hp(0.3),
+    borderColor: COLORS.primaryBlue,
   },
   name: {
-    color: "grey",
-    marginTop: 5,
+    color: COLORS.grey,
+    marginTop: hp(2),
   },
 });
 

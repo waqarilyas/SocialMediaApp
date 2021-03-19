@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
+import { COLORS } from "../theme/constants";
 
 // create a component
 const NotificationsCard = ({ item }) => {
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     paddingVertical: 10,
     borderRadius: 5,
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
 
     shadowColor: "#000",
     shadowOffset: {
@@ -48,7 +49,6 @@ const styles = StyleSheet.create({
   },
   subText: {
     fontSize: 16,
-    // color: "grey",
   },
 });
 

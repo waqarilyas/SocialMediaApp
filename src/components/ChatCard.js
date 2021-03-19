@@ -1,6 +1,7 @@
 //import liraries
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
+import { COLORS } from "../theme/constants";
 
 // create a component
 const ChatCard = ({ item }) => {
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
   },
   subText: {
     fontSize: 13,
-    color: "grey",
+    color: COLORS.grey,
   },
 });
 

@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { Button } from "react-native-paper";
+import { COLORS } from "../theme/constants";
 // create a component
 const CommunityFriendsCard = ({ item }) => {
   return (
@@ -16,7 +17,7 @@ const CommunityFriendsCard = ({ item }) => {
           style={styles.button}
           mode="outlined"
           onPress={() => console.log(item.status)}
-          color="white"
+          color={COLORS.white}
         >
           {item.status}
         </Button>
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: "600",
-    color: "black",
+    color: COLORS.black,
     justifyContent: "center",
     alignItems: "center",
   },

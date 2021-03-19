@@ -11,6 +11,7 @@ import {
 } from "../../assets/images";
 import CommunityFriendCard from "../components/CommunityFriendCard";
 import SearchComponent from "../components/SearchComponent";
+import { COLORS } from "../theme/constants";
 
 const friendsData = [
   {
@@ -65,7 +66,7 @@ const CommunityScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
   },
 });
 

@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import firebase from "firebase";
+import { COLORS } from "../theme/constants";
 
 // create a component
 const SettingScreen = () => {
@@ -34,12 +35,12 @@ const styles = StyleSheet.create({
     color: "grey",
   },
   button: {
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
     borderWidth: 1,
     textAlign: "center",
     borderColor: "rgba(0,0,0,0.1)",
     paddingVertical: 14,
-    color: "#4B8CF5",
+    color: COLORS.primaryBlue,
     fontSize: 16,
   },
 });

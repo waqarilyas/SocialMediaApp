@@ -8,7 +8,9 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { TextInput } from "react-native-paper";
-import firebase from "firebase";
+import * as firebase from "firebase";
+import "firebase/firestore";
+import { COLORS } from "../theme/constants";
 
 // create a component
 
@@ -33,7 +35,25 @@ const Signup = ({ navigation }) => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(() => {
+      .then(async () => {
+        await firebase
+          .firestore()
+          .collection("users")
+          .add({
+            name: name,
+            email: email,
+            profilePic: "",
+            followers: 0,
+            folllowing: 0,
+            friendCount: 0,
+          })
+          .then(() => {
+            console.log("--user data added successfully--");
+          })
+          .catch((err) => {
+            console.log("--error storing user---", err);
+          });
+
         console.log("User created successfully");
         setLoading(false);
       })
@@ -107,7 +127,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
   },
   header: {
     fontSize: 24,
@@ -117,13 +137,13 @@ const styles = StyleSheet.create({
   input: {
     width: "90%",
     marginTop: 20,
-    backgroundColor: "white",
+    backgroundColor: COLORS.white,
   },
   subHeading: {
-    color: "grey",
+    color: COLORS.grey,
   },
   signupButton: {
-    backgroundColor: "#4DA9DD",
+    backgroundColor: COLORS.primaryBlue,
     paddingVertical: 13,
     width: "90%",
     alignItems: "center",
@@ -131,21 +151,21 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   signupText: {
-    color: "white",
+    color: COLORS.white,
     fontSize: 18,
     fontWeight: "700",
   },
   alreadyContainer: {
-    color: "grey",
+    color: COLORS.grey,
     marginTop: 10,
   },
   alreadyLogin: {
-    color: "black",
+    color: COLORS.black,
     fontSize: 16,
   },
   error: {
     marginTop: 20,
-    color: "red",
+    color: COLORS.red,
     fontSize: 12,
   },
   loadingContainer: {

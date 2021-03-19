@@ -4,6 +4,7 @@ import { Image, StyleSheet, TouchableOpacity } from "react-native";
 import { bell, settingsIcon } from "../../assets/icons";
 import Login from "../screens/Login";
 import Signup from "../screens/Signup";
+import { COLORS } from "../theme/constants";
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,14 @@ function AuthStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        name="Login"
+        component={Login}
+        options={({ navigation }) => ({
+          headerShown: false,
+        })}
+      />
+
+      <Stack.Screen
         name="Signup"
         component={Signup}
         options={{
@@ -37,17 +46,6 @@ function AuthStack() {
           // headerLeft: () => headerLeft(),
           //   headerStyle: styles.header,
         }}
-      />
-
-      <Stack.Screen
-        name="Login"
-        component={Login}
-        options={({ navigation }) => ({
-          title: "Login",
-          // headerLeft: () => headerLeft(navigation),
-          headerRight: () => headerRight(navigation),
-          headerStyle: styles.header,
-        })}
       />
     </Stack.Navigator>
   );
@@ -59,7 +57,7 @@ const styles = StyleSheet.create({
     height: 25,
     width: 25,
     marginHorizontal: 10,
-    tintColor: "#4B8CF5",
+    tintColor: COLORS.primaryBlue,
   },
   header: {
     // backgroundColor: "red",
