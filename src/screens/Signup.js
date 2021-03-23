@@ -14,7 +14,7 @@ import { COLORS } from "../theme/constants";
 
 // create a component
 
-// name ,emai, password
+// name ,emai, password 
 
 const Signup = ({ navigation }) => {
   const [name, setName] = useState("");
